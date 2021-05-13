@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
 	nome := "Douglas"
@@ -17,6 +15,15 @@ func main() {
 
 	var comando int
 	fmt.Scan(&comando)
-
 	fmt.Println("O comando digitado foi:", comando)
+
+	if comando == 1 {
+		fmt.Print("Monitorando...")
+	} else if comando == 2 {
+		fmt.Println("Exibindo Logs...")
+	} else if comando == 0 {
+		fmt.Println("Saindo do programa...")
+	} else {
+		fmt.Println("Não conheço este comando!")
+	}
 }
