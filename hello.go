@@ -19,7 +19,7 @@ func main() {
 
 		switch comando {
 		case 1:
-			iniciarMonitoramento()
+			iniciaMonitoramento()
 		case 2:
 			fmt.Println("Exibindo Logs...")
 		case 0:
@@ -53,15 +53,17 @@ func leComando() int {
 	return comando
 }
 
-func iniciarMonitoramento() {
+func iniciaMonitoramento() {
 	fmt.Println("Monitoramento...")
 
-	sites := []string{"https://random-status-code.herokuapp.com/", "https://www.alura.com.br", "https://www.caelum.com.br"}
+	// sites := []string{"https://random-status-code.herokuapp.com/", "https://www.alura.com.br", "https://www.caelum.com.br"}
+
+	sites := leSites()
 
 	for i := 0; i < monitoramentos; i++ {
 		for i, site := range sites {
 			fmt.Println("Testanndo site", i, ":", site)
-			testarSite(site)
+			testaSite(site)
 		}
 
 		time.Sleep(delay * time.Second)
@@ -71,7 +73,7 @@ func iniciarMonitoramento() {
 	fmt.Println("")
 }
 
-func testarSite(site string) {
+func testaSite(site string) {
 	resp, _ := http.Get(site)
 
 	statusCode := resp.StatusCode
@@ -80,4 +82,13 @@ func testarSite(site string) {
 	} else {
 		fmt.Println("Site:", site, "está com problemas. Status Code:", statusCode)
 	}
+}
+
+func leSites() []string {
+	var sites []string
+
+	arquivo, _ := os.Open("sites.txt")
+	fmt.Print(arquivo)
+
+	return sites
 }
