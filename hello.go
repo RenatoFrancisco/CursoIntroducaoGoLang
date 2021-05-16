@@ -59,8 +59,6 @@ func leComando() int {
 func iniciaMonitoramento() {
 	fmt.Println("Monitoramento...")
 
-	// sites := []string{"https://random-status-code.herokuapp.com/", "https://www.alura.com.br", "https://www.caelum.com.br"}
-
 	sites := leSites()
 
 	for i := 0; i < monitoramentos; i++ {
@@ -86,8 +84,10 @@ func testaSite(site string) {
 	statusCode := resp.StatusCode
 	if statusCode == 200 {
 		fmt.Println("Site", site, "foi carregado com sucesso!")
+		registraLog(site, true)
 	} else {
 		fmt.Println("Site:", site, "está com problemas. Status Code:", statusCode)
+		registraLog(site, false)
 	}
 }
 
@@ -114,4 +114,14 @@ func leSites() []string {
 	arquivo.Close()
 
 	return sites
+}
+
+func registraLog(site string, status bool) {
+	arquivo, err := os.OpenFile("log.txt", os.O_CREATE|os.O_RDWR, 0666)
+
+	if err != nil {
+		fmt.Println("Ocorreu um erro", err)
+	}
+
+	fmt.Println(arquivo)
 }
