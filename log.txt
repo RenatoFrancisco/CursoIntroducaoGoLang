@@ -1,11 +1,9 @@
-https://www.caelum.com.br - omline: true
- - omline: false
-1https://random-status-code.herokuapp.com/ - omline: false
-https://www.alura.com.br - omline: true
-https://www.caelum.com.br - omline: true
-https://random-status-code.herokuapp.com/ - omline: false
-https://www.alura.com.br - omline: true
-https://www.caelum.com.br - omline: true
-https://random-status-code.herokuapp.com/ - omline: true
-https://www.alura.com.br - omline: true
-https://www.caelum.com.br - omline: true
+16/05/2021 17:35:25 - https://random-status-code.herokuapp.com/ - omline: true
+16/05/2021 17:35:26 - https://www.alura.com.br - omline: true
+16/05/2021 17:35:26 - https://www.caelum.com.br - omline: true
+16/05/2021 17:35:31 - https://random-status-code.herokuapp.com/ - omline: false
+16/05/2021 17:35:31 - https://www.alura.com.br - omline: true
+16/05/2021 17:35:32 - https://www.caelum.com.br - omline: true
+16/05/2021 17:35:37 - https://random-status-code.herokuapp.com/ - omline: false
+16/05/2021 17:35:37 - https://www.alura.com.br - omline: true
+16/05/2021 17:35:38 - https://www.caelum.com.br - omline: true
