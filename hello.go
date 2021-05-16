@@ -6,6 +6,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -117,11 +118,12 @@ func leSites() []string {
 }
 
 func registraLog(site string, status bool) {
-	arquivo, err := os.OpenFile("log.txt", os.O_CREATE|os.O_RDWR, 0666)
+	arquivo, err := os.OpenFile("log.txt", os.O_CREATE|os.O_RDWR|os.O_APPEND, 0666)
 
 	if err != nil {
 		fmt.Println("Ocorreu um erro", err)
 	}
 
-	fmt.Println(arquivo)
+	arquivo.WriteString(site + " - omline: " + strconv.FormatBool(status) + "\n")
+	arquivo.Close()
 }
